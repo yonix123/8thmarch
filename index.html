@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Yenlik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #faf5f0 0%, #f5e6d3 50%, #fce4ec 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating flowers background */
+        .flower {
+            position: fixed;
+            font-size: 3rem;
+            opacity: 0.4;
+            animation: float 8s ease-in-out infinite, spin 6s linear infinite, pulse 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .flower:nth-child(1) {
+            left: 2%;
+            top: 10%;
+            animation-delay: 0s, 0s, 0s;
+        }
+
+        .flower:nth-child(2) {
+            right: 3%;
+            top: 15%;
+            animation-delay: 1s, 0.5s, 1s;
+            font-size: 2.5rem;
+        }
+
+        .flower:nth-child(3) {
+            left: 5%;
+            bottom: 10%;
+            animation-delay: 2s, 1s, 2s;
+        }
+
+        .flower:nth-child(4) {
+            right: 4%;
+            bottom: 8%;
+            animation-delay: 1.5s, 1.5s, 1.5s;
+            font-size: 2rem;
+        }
+
+        .flower:nth-child(5) {
+            left: 1%;
+            top: 45%;
+            animation-delay: 0.5s, 2s, 0.5s;
+            font-size: 2.8rem;
+        }
+
+        .flower:nth-child(6) {
+            right: 2%;
+            top: 55%;
+            animation-delay: 1.5s, 2.5s, 1.5s;
+            font-size: 2.3rem;
+        }
+
+        .flower:nth-child(7) {
+            left: 3%;
+            bottom: 25%;
+            animation-delay: 2.5s, 3s, 2.5s;
+            font-size: 2.6rem;
+        }
+
+        .flower:nth-child(8) {
+            right: 1%;
+            bottom: 35%;
+            animation-delay: 0.8s, 1.2s, 0.8s;
+            font-size: 2.4rem;
+        }
+
+        .flower:nth-child(9) {
+            left: 2%;
+            top: 75%;
+            animation-delay: 1.2s, 3.5s, 1.2s;
+            font-size: 2.7rem;
+        }
+
+        .flower:nth-child(10) {
+            right: 3%;
+            bottom: 50%;
+            animation-delay: 2.2s, 2.8s, 2.2s;
+            font-size: 2.5rem;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            25% {
+                transform: translateY(-40px) translateX(20px);
+            }
+            50% {
+                transform: translateY(-20px) translateX(-15px);
+            }
+            75% {
+                transform: translateY(-50px) translateX(25px);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* PAGE 1 - Main Congratulations */
+        #page1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            max-width: 700px;
+            margin: 0 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(220, 20, 60, 0.1);
+            border: 2px solid rgba(220, 20, 60, 0.2);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .flower-crown {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #dc143c;
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #d4756d;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            animation: fadeIn 0.8s ease-out 0.4s both;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #dc143c, transparent);
+            margin: 30px auto;
+            animation: fadeIn 0.8s ease-out 0.5s both;
+        }
+
+        .photo-space {
+            margin: 30px 0;
+            animation: fadeIn 0.8s ease-out 0.5s both;
+        }
+
+        .photo-space img {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.15);
+            max-width: 100%;
+            height: auto;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin: 30px 0;
+            font-weight: 300;
+            animation: fadeIn 0.8s ease-out 0.6s both;
+        }
+
+        .special-message {
+            font-style: italic;
+            color: #d4756d;
+            font-size: 1.05rem;
+            margin: 25px 0;
+        }
+
+        .cta-button {
+            margin-top: 35px;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #dc143c 0%, #ff69b4 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            animation: fadeIn 0.8s ease-out 0.7s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* PAGE 2 - Friends Gallery */
+        #page2 {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 100vh;
+            padding: 40px 20px;
+            z-index: 10;
+        }
+
+        #page2.active {
+            display: flex;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .gallery-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #dc143c;
+            margin-bottom: 10px;
+        }
+
+        .gallery-header p {
+            font-size: 1.05rem;
+            color: #d4756d;
+        }
+
+        .friends-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .friend-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(220, 20, 60, 0.1);
+            border: 2px solid rgba(220, 20, 60, 0.2);
+            text-align: center;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .friend-card.group-card {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .group-photo {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #f5d5e0, #fce4ec);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border: 3px solid #dc143c;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .group-photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .friend-photo {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #f5d5e0, #fce4ec);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 3px solid #dc143c;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .friend-photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .friend-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .friend-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .friend-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .friend-name {
+            font-size: 1.3rem;
+            color: #dc143c;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .friend-message {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .back-button {
+            margin-top: 40px;
+            padding: 12px 30px;
+            font-size: 1rem;
+            background: rgba(220, 20, 60, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            background: #dc143c;
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+
+            .flower-crown {
+                font-size: 3rem;
+            }
+
+            .friends-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-header h2 {
+                font-size: 2rem;
+            }
+
+            .group-photo {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating flowers background -->
+    <div class="flower">🌹</div>
+    <div class="flower">🌸</div>
+    <div class="flower">💐</div>
+    <div class="flower">🌺</div>
+    <div class="flower">🌷</div>
+    <div class="flower">🌼</div>
+    <div class="flower">🏵️</div>
+    <div class="flower">🌻</div>
+    <div class="flower">🥀</div>
+    <div class="flower">💮</div>
+
+    <!-- PAGE 1 -->
+    <div id="page1">
+        <div class="container">
+            <div class="flower-crown">🌹</div>
+            
+            <h1>Happy Women's Day</h1>
+            <div class="subtitle">To the best Yenlik of the bests</div>
+            
+            <div class="photo-space">
+                <img id="mainPhoto" src="8 march qyzda.png" alt="Photo">
+            </div>
+
+            <p class="message">
+                To a truly remarkable girl who deserves to be celebrated every single day.
+            </p>
+
+            <p class="special-message">
+                Your strength, kindness, and beauty inspire me and everyone I know. Thank you for being you.
+            </p>
+
+            <button class="cta-button" onclick="goToFriends()">Celebrate! 🎉</button>
+        </div>
+    </div>
+
+    <!-- PAGE 2 - Friends Gallery -->
+    <div id="page2">
+        <div class="gallery-header">
+            <h2>Messages from your jigas</h2>
+            <p>People who would fight for you in WW3</p>
+        </div>
+
+        <div class="friends-gallery" id="friendsGallery">
+            <!-- Friend cards will be added here by JavaScript -->
+        </div>
+
+        <button class="back-button" onclick="goBack()">← Back</button>
+    </div>
+
+    <script>
+        // Friend data - customize this with your friends' info
+        const friends = [
+            {
+                name: "Мирас джигас",
+                message: "Stay Kazakh. Continue eating horse meat. Stay hydrated and be the soul of our class!",
+                photoUrl: "miras nigas.jpeg" // Add photo URL here
+            },
+            {
+                name: "Мадидди",
+                message: "Енлик, поздравляю с международным женским днем! Желаю всегда чувствовать надежную опору, уверенно идти вперед, и точно знать что для тебя нет никаких преград 🌸",
+                photoUrl: "madishka.jpg" // Add photo URL here
+            },
+            {
+                name: "Тархун",
+                message: "Таргын слушал подкаст Алисы Лью и он желает чтобы ты была кул как Алиса Лью",
+                photoUrl: "tarqun.png" // Add photo URL here
+            },
+            {
+                name: "Adolf Hitler",
+                message: "I see you are keeping our birth date preserved only for worthy gentlemen and ladies. I am proud of you!",
+                photoUrl: "hitler.png" // Add photo URL here
+            },
+            {
+                name: "Flynn Rider",
+                message: "My eyes hurt from the amount of light you are shining with",
+                photoUrl: "flynn.png" // Add photo URL here
+            },
+            {
+                name: "Howl",
+                message: "Let all the witches and bitches on your way never interrupt you",
+                photoUrl: "howl.png" // Add photo URL here
+            },
+            {
+                name: "Malcolm Todd",
+                message: "Ima make a concert in Almighty specifically for you",
+                photoUrl: "malcolm.png" // Add photo URL here
+            },
+            {
+                name: "Clairo",
+                message: "You are my fav listener. Keep slaying!!!",
+                photoUrl: "clairo.png" // Add photo URL here
+            },
+            {
+                name: "Kasym Jomart Toqayev",
+                message: "I am proud of you for being a good citizen, student, and fighter for women rights! Keep it up!",
+                photoUrl: "toqayev.png" // Add photo URL here
+            },
+            {
+                name: "zhalg ass",
+                message: "Hope ts made you feel a lil better and helps you to prepare for your mocks and improve your health!",
+                photoUrl: "meowmeow.jpeg" // Add photo URL here
+            }
+        ];
+
+        function renderFriends() {
+            const gallery = document.getElementById('friendsGallery');
+            
+            // First card: friend 1 as a group (large)
+            const firstGroupCard = `
+                <div class="friend-card group-card">
+                    <div class="group-photo">
+                        ${friends[0].photoUrl ? `<img src="${friends[0].photoUrl}" alt="${friends[0].name}">` : '👤'}
+                    </div>
+                    <div class="friend-name">${friends[0].name}</div>
+                    <div class="friend-message">"${friends[0].message}"</div>
+                </div>
+            `;
+
+            // Middle cards: friends 2-7 in 2 columns
+            const middleCards = friends.slice(1, 7).map(friend => `
+                <div class="friend-card">
+                    <div class="friend-photo">
+                        ${friend.photoUrl ? `<img src="${friend.photoUrl}" alt="${friend.name}">` : '👤'}
+                    </div>
+                    <div class="friend-name">${friend.name}</div>
+                    <div class="friend-message">"${friend.message}"</div>
+                </div>
+            `).join('');
+
+            // Friends 8 and 10 in a row
+            const bottomRow = `
+                <div class="friend-card">
+                    <div class="friend-photo">
+                        ${friends[7].photoUrl ? `<img src="${friends[7].photoUrl}" alt="${friends[7].name}">` : '👤'}
+                    </div>
+                    <div class="friend-name">${friends[7].name}</div>
+                    <div class="friend-message">"${friends[7].message}"</div>
+                </div>
+                <div class="friend-card">
+                    <div class="friend-photo">
+                        ${friends[9].photoUrl ? `<img src="${friends[9].photoUrl}" alt="${friends[9].name}">` : '👤'}
+                    </div>
+                    <div class="friend-name">${friends[9].name}</div>
+                    <div class="friend-message">"${friends[9].message}"</div>
+                </div>
+            `;
+
+            // Last card: friend 9 as a group (large)
+            const lastGroupCard = `
+                <div class="friend-card group-card">
+                    <div class="group-photo">
+                        ${friends[8].photoUrl ? `<img src="${friends[8].photoUrl}" alt="${friends[8].name}">` : '👤'}
+                    </div>
+                    <div class="friend-name">${friends[8].name}</div>
+                    <div class="friend-message">"${friends[8].message}"</div>
+                </div>
+            `;
+
+            gallery.innerHTML = firstGroupCard + middleCards + bottomRow + lastGroupCard;
+        }
+
+        function goToFriends() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').classList.add('active');
+            renderFriends();
+        }
+
+        function goBack() {
+            document.getElementById('page2').classList.remove('active');
+            document.getElementById('page1').style.display = 'flex';
+        }
+
+        // Initialize
+        renderFriends();
+    </script>
+</body>
+</html>
